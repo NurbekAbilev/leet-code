@@ -15,5 +15,5 @@ public class Solution {
         return sent.substring(0,sent.length()-1);
         else return "";
         
-    }
+    } 
 }
