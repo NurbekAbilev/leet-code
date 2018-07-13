@@ -1,0 +1,25 @@
+class Solution {
+    public String convert(String s, int numRows) {
+        if(numRows==1){
+            return s;
+        }
+        ArrayList<ArrayList<Character>> mat = new ArrayList<>();
+        for(int i=0;i<numRows;i++){
+            mat.add(new ArrayList<Character>());
+        }
+        int row = 0,move = 1;
+        for(int i=0;i<s.length();i++){
+            mat.get(row).add(s.charAt(i));
+            row+=move;
+            if(row==numRows-1) move = -1;
+            if(row==0) move = 1;
+        }
+        StringBuilder str = new StringBuilder("");
+        for(ArrayList arr : mat){
+            for(int i=0;i<arr.size();i++){
+                str.append(arr.get(i));   
+            }
+        }
+        return str.toString();
+    }
+}
